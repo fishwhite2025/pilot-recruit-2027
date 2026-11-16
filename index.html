@@ -1,1 +1,570 @@
-PLACEHOLDER_CONTENT
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 民航招飞指南 · 耳音老师</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E2A47'/%3E%3Cpath d='M12 34h40v6H12z' fill='%23E0B84C'/%3E%3Cpath d='M12 42h40v3H12z' fill='%23C9A227'/%3E%3Cpath d='M12 46h40v3H12z' fill='%23E0B84C'/%3E%3Cpath d='M12 50h40v3H12z' fill='%23C9A227'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#0E2A47;--navy-2:#143A63;--navy-3:#1C4E80;
+  --gold:#C9A227;--gold-2:#E0B84C;--gold-soft:#F4E4B3;
+  --bg:#EEF2F7;--card:#FFFFFF;--ink:#172436;--ink-2:#46586E;--ink-3:#76869A;
+  --line:#E1E8F0;--green:#047857;--green-bg:#D6F2E6;--amber:#B45309;--amber-bg:#FCEBCB;
+  --blue:#1D4ED8;--blue-bg:#E0EAFF;--red:#B91C1C;--red-bg:#FBE0E0;
+  --shadow:0 6px 22px rgba(14,42,71,.10);--shadow-sm:0 2px 10px rgba(14,42,71,.07);
+  --radius:16px;--header-h:58px;--tab-h:62px;
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:#0A1E33;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 12% 8%,rgba(224,184,76,.14),transparent 42%),radial-gradient(circle at 88% 92%,rgba(28,78,128,.55),transparent 45%),linear-gradient(160deg,#0C2440,#08182B)}
+.app{position:relative;z-index:1;max-width:480px;margin:0 auto;min-height:100vh;background:var(--bg);box-shadow:0 0 60px rgba(0,0,0,.35);display:flex;flex-direction:column}
+.app-header{position:sticky;top:0;z-index:40;height:var(--header-h);flex:0 0 auto;display:flex;align-items:center;gap:11px;padding:0 14px;background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff;border-bottom:2px solid var(--gold)}
+.app-header .brand-logo{width:38px;height:38px;border-radius:50%;flex:0 0 auto;background:rgba(255,255,255,.08);border:1.5px solid rgba(224,184,76,.7);object-fit:cover}
+.app-header .brand-txt{min-width:0;flex:1}
+.app-header .brand-name{font-size:16px;font-weight:800;letter-spacing:.5px;line-height:1.25}
+.app-header .brand-sub{font-size:11px;color:var(--gold-2);letter-spacing:1.2px;line-height:1.3}
+.app-header .wing{flex:0 0 auto;color:var(--gold-2)}
+.views{flex:1 1 auto;padding-bottom:calc(var(--tab-h) + 14px)}
+.view{display:none;padding:14px 14px 0;animation:fade .28s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sec-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:800;margin:20px 2px 11px;color:var(--navy)}
+.sec-title:first-child{margin-top:4px}
+.sec-title .bar{width:4px;height:16px;border-radius:2px;background:linear-gradient(var(--gold-2),var(--gold))}
+.muted-note{font-size:12px;color:var(--ink-3);line-height:1.6;margin:8px 2px}
+.hero{position:relative;overflow:hidden;border-radius:var(--radius);background:linear-gradient(150deg,var(--navy) 5%,var(--navy-2) 60%,var(--navy-3));color:#fff;padding:18px 16px 16px;box-shadow:var(--shadow)}
+.hero::after{content:"";position:absolute;right:-40px;top:-46px;width:180px;height:180px;background:radial-gradient(circle,rgba(224,184,76,.28),transparent 70%)}
+.hero-top{display:flex;align-items:center;gap:13px;position:relative;z-index:1}
+.hero-top img{width:74px;height:74px;border-radius:50%;border:2px solid var(--gold-2);object-fit:cover;background:#fff}
+.hero h1{margin:0;font-size:19px;font-weight:800;line-height:1.35}
+.hero .hero-sub{margin:3px 0 0;font-size:12px;color:var(--gold-2);letter-spacing:.6px}
+.hero p.intro{margin:13px 0 0;font-size:13px;color:#D7E2EF;position:relative;z-index:1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(224,184,76,.25);border-radius:12px;padding:9px 4px;text-align:center}
+.stat b{display:block;font-size:18px;font-weight:800;color:var(--gold-2);line-height:1.2}
+.stat span{display:block;font-size:10.5px;color:#C7D4E3;margin-top:2px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.quick a{display:flex;flex-direction:column;align-items:center;gap:7px;background:var(--card);border-radius:14px;padding:13px 6px;text-decoration:none;color:var(--navy);font-size:12.5px;font-weight:700;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+.quick a .qi{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F7ECC9,#EAD49A);color:var(--navy)}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.pill{border:1px solid var(--line);background:var(--card);color:var(--ink-2);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;min-height:36px;cursor:pointer;font-family:inherit}
+.pill.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.search{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.search input{border:0;outline:0;flex:1;font-size:15px;font-family:inherit;color:var(--ink);background:transparent;min-width:0}
+.search input::placeholder{color:var(--ink-3)}
+.tag{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;line-height:1.5;white-space:nowrap}
+.tag.pub{color:var(--green);background:var(--green-bg)}
+.tag.self{color:var(--amber);background:var(--amber-bg)}
+.tag.air{color:var(--blue);background:var(--blue-bg)}
+.tag.sch{color:var(--navy);background:#E4ECF5}
+.tag.tbd{color:var(--red);background:var(--red-bg)}
+.chip{font-size:11.5px;color:var(--ink-2);background:#F0F4F9;border:1px solid var(--line);border-radius:7px;padding:2px 8px;line-height:1.6}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:11px;padding:11px 16px;min-height:44px;border:1px solid transparent;text-decoration:none}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#23303f;box-shadow:var(--shadow-sm)}
+.btn-outline{background:#fff;color:var(--navy);border-color:var(--navy)}
+.btn-block{display:flex;width:100%}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:11px;box-shadow:var(--shadow-sm)}
+.card-head{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+.card-head .ico{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--gold-2)}
+.card-head .tt{flex:1;min-width:0}
+.card-head h3{margin:0;font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
+.card-head .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.card-head .chev{flex:0 0 auto;color:var(--ink-3);transition:transform .25s;margin-top:4px}
+.kv{display:grid;grid-template-columns:74px 1fr;gap:7px 10px;font-size:13px;margin-bottom:8px}
+.kv dt{color:var(--ink-3);font-weight:600}
+.kv dd{margin:0;color:var(--ink);min-width:0}
+.card .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.mini-link{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:12.5px;font-weight:700;color:var(--navy);border:1px solid var(--navy);border-radius:9px;padding:7px 11px;min-height:36px}
+.mini-link.wechat{color:#0B7A3C;border-color:#0B7A3C}
+.prov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.prov-grid button{font-family:inherit;font-size:13px;font-weight:600;min-height:40px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink-2);cursor:pointer;padding:4px 2px}
+.prov-grid button.on{background:var(--navy);color:var(--gold-2);border-color:var(--navy)}
+.org-label{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:800;color:var(--navy);margin:14px 2px 8px}
+.org-label::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--gold)}
+.sched-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:11px;padding:11px 12px;margin-bottom:9px}
+.sched-item .date{font-size:14px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.sched-item .date .clock{font-size:12px;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:6px;padding:1px 7px}
+.sched-item .place{font-size:13px;color:var(--ink);margin-top:5px;line-height:1.6}
+.sched-item .cover{font-size:12px;color:var(--ink-3);margin-top:4px}
+.sched-item.tbd{border-left-color:var(--red)}
+.sched-item.wechat-only{border-left-color:#0B7A3C;background:#F3FBF6}
+.timeline{position:relative;padding-left:26px;margin:6px 0 4px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--navy-3))}
+.tl-item{position:relative;margin-bottom:16px}
+.tl-item:last-child{margin-bottom:2px}
+.tl-item .dot{position:absolute;left:-25px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--gold);box-sizing:border-box}
+.tl-item .when{font-size:13px;font-weight:800;color:var(--navy)}
+.tl-item .what{font-size:13px;color:var(--ink-2);margin-top:2px;line-height:1.6}
+.flow{counter-reset:step;margin:4px 0}
+.flow-step{position:relative;padding:0 0 16px 42px;counter-increment:step}
+.flow-step:last-child{padding-bottom:0}
+.flow-step::before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--gold-2);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.flow-step::after{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--line)}
+.flow-step:last-child::after{display:none}
+.flow-step b{font-size:14px;color:var(--navy)}
+.flow-step p{margin:3px 0 0;font-size:12.5px;color:var(--ink-2)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.duo .box{border-radius:14px;padding:13px 12px;border:1px solid var(--line)}
+.duo .box.pub{background:linear-gradient(160deg,#E9F7F0,#D6F2E6)}
+.duo .box.self{background:linear-gradient(160deg,#FDF3E0,#FCEBCB)}
+.duo .box h4{margin:0 0 6px;font-size:14px;font-weight:800;display:flex;align-items:center;gap:6px}
+.duo .box.pub h4{color:var(--green)}
+.duo .box.self h4{color:var(--amber)}
+.duo .box p{margin:0;font-size:12px;color:var(--ink-2);line-height:1.6}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:9px;overflow:hidden}
+.faq-q{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;font-size:14px;font-weight:700;color:var(--navy)}
+.faq-q .q-ico{flex:0 0 auto;width:22px;height:22px;border-radius:6px;background:var(--navy);color:var(--gold-2);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:800}
+.faq-q .q-plus{margin-left:auto;color:var(--ink-3);transition:transform .25s}
+.faq-item.open .q-plus{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 14px 14px 46px;font-size:13px;color:var(--ink-2)}
+.faq-item.open .faq-a{display:block}
+.modal-mask{position:fixed;inset:0;z-index:90;background:rgba(8,20,36,.55);display:none;align-items:flex-end;justify-content:center}
+.modal-mask.show{display:flex}
+.modal{width:100%;max-width:480px;max-height:88vh;overflow-y:auto;background:var(--bg);border-radius:20px 20px 0 0;padding:0 0 22px;animation:up .3s ease}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.modal-handle{width:40px;height:4px;border-radius:2px;background:#CBD6E2;margin:10px auto 0}
+.modal-head{display:flex;align-items:center;gap:11px;padding:14px 16px 12px;background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff;position:sticky;top:0;z-index:2}
+.modal-head .m-ico{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:var(--gold-2);flex:0 0 auto}
+.modal-head h3{margin:0;font-size:16px;font-weight:800;line-height:1.35}
+.modal-head .m-close{margin-left:auto;flex:0 0 auto;cursor:pointer;color:#fff;background:rgba(255,255,255,.15);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.modal-body{padding:14px 16px 0}
+.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;height:var(--tab-h);z-index:50;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:var(--ink-3);cursor:pointer;background:none;border:0;font-family:inherit}
+.tab.on{color:var(--navy)}
+.tab.on .t-ico{color:var(--gold)}
+.tab .t-ico{color:var(--ink-3)}
+.school-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.school-list .s{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:12.5px;color:var(--ink-2);font-weight:600}
+.src-list{display:flex;flex-direction:column;gap:9px}
+.src-row{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 12px;text-decoration:none;color:var(--ink)}
+.src-row .src-ico{flex:0 0 auto;color:var(--navy)}
+.src-row .src-txt{flex:1;min-width:0}
+.src-row b{font-size:13.5px;color:var(--navy);display:block}
+.src-row span{font-size:11.5px;color:var(--ink-3);word-break:break-all}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="app-header">
+    <img class="brand-logo" src="https://aka.doubaocdn.com/s/CVgpeVwVmw" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%230E2A47%22/%3E%3Cpath d=%22M12 30h40v5H12z%22 fill=%22%23E0B84C%22/%3E%3Cpath d=%22M12 37h40v4H12z%22 fill=%22%23C9A227%22/%3E%3Cpath d=%22M12 43h40v4H12z%22 fill=%22%23E0B84C%22/%3E%3Cpath d=%22M12 49h40v4H12z%22 fill=%22%23C9A227%22/%3E%3C/svg%3E'" alt="耳音老师">
+    <div class="brand-txt">
+      <div class="brand-name">耳音老师</div>
+      <div class="brand-sub">2027 民航招飞指南</div>
+    </div>
+    <svg class="wing" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13c4-1 7-3 9-8 2 5 5 7 9 8-3.5 1-6 2.5-8 6-2-3.5-4.5-5-10-6z"/><path d="M12 5v14"/></svg>
+  </header>
+  <main class="views">
+    <section class="view active" id="view-home">
+      <div class="hero">
+        <div class="hero-top">
+          <img src="https://aka.doubaocdn.com/s/V45xZdnKWS" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%230E2A47%22/%3E%3Cpath d=%22M12 30h40v5H12z%22 fill=%22%23E0B84C%22/%3E%3Cpath d=%22M12 37h40v4H12z%22 fill=%22%23C9A227%22/%3E%3Cpath d=%22M12 43h40v4H12z%22 fill=%22%23E0B84C%22/%3E%3Cpath d=%22M12 49h40v4H12z%22 fill=%22%23C9A227%22/%3E%3C/svg%3E'" alt="耳音老师">
+          <div>
+            <h1>2027 民航招飞<br>信息一站通</h1>
+            <div class="hero-sub">简章 · 初检 · 报考全流程</div>
+          </div>
+        </div>
+        <p class="intro">汇总民航招飞系统与各院校、航司官方发布，帮你理清招飞简章、分省初检安排与报考节点，持续更新。</p>
+        <div class="stats">
+          <div class="stat"><b>14</b><span>份简章</span></div>
+          <div class="stat"><b>22</b><span>所院校</span></div>
+          <div class="stat"><b>20+</b><span>覆盖省份</span></div>
+          <div class="stat"><b>8</b><span>步流程</span></div>
+        </div>
+      </div>
+      <div class="quick">
+        <a data-go="schedule"><span class="qi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>查初检安排</a>
+        <a data-go="brochure"><span class="qi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>看招飞简章</a>
+        <a data-go="guide"><span class="qi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M12 8v8M8 12l4 4 4-4"/></svg></span>报考与报名</a>
+      </div>
+      <div class="sec-title"><span class="bar"></span>关键时间节点</div>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item"><span class="dot"></span><div class="when">2026-10-29</div><div class="what">民航招飞系统开通，可注册报名</div></div>
+          <div class="tl-item"><span class="dot"></span><div class="when">2026 年 11 月起</div><div class="what">各省陆续组织预选初检</div></div>
+          <div class="tl-item"><span class="dot"></span><div class="when">2027-02-15</div><div class="what">开通确认有效招飞申请（最多 2 个）</div></div>
+          <div class="tl-item"><span class="dot"></span><div class="when">2027-05-31</div><div class="what">招飞系统关闭</div></div>
+          <div class="tl-item"><span class="dot"></span><div class="when">高考后</div><div class="what">提前批填报志愿，择优录取</div></div>
+        </div>
+      </div>
+      <div class="sec-title"><span class="bar"></span>两种培养模式</div>
+      <div class="duo">
+        <div class="box pub"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>公费（委托培养）</h4><p>航司承担飞行培训费（约 70–150 万元），毕业达标后入职签约航司，仅需缴纳普通高校学费。</p></div>
+        <div class="box self"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M9.5 9h4a2 2 0 0 1 0 4h-4"/></svg>自费（自主培养）</h4><p>学生承担培训费（约 65–80 万元），多采用担保贷款、分期偿还或公司垫资等方式，报名前看清协议。</p></div>
+      </div>
+      <p class="muted-note">数据截至 2026-11-16，来自中国民用航空招飞系统及各院校、航司官方发布；具体以官方最新通知为准。</p>
+    </section>
+    <section class="view" id="view-brochure">
+      <div class="sec-title"><span class="bar"></span>招飞简章（14 份）</div>
+      <div class="pills" id="bFilter">
+        <button class="pill on" data-bf="all">全部</button>
+        <button class="pill" data-bf="air">航空公司</button>
+        <button class="pill" data-bf="school">院校自主</button>
+      </div>
+      <div class="search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#76869A" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="bSearch" placeholder="搜索单位 / 省份 / 航司">
+      </div>
+      <div id="bList"></div>
+    </section>
+    <section class="view" id="view-schedule">
+      <div class="sec-title"><span class="bar"></span>分省初检安排</div>
+      <div class="search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#76869A" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="pSearch" placeholder="搜索省份，如 四川 / 湖北 / 山东">
+      </div>
+      <div class="prov-grid" id="provGrid"></div>
+      <div id="schedBox"></div>
+      <p class="muted-note">绿色条目为仅在官方微信公众号发布、尚未公布具体日期的安排，点击“查看原文”可在微信内打开；带红色“待定”标记的为行程暂未确定。</p>
+    </section>
+    <section class="view" id="view-guide">
+      <div class="sec-title"><span class="bar"></span>官方报名入口</div>
+      <div class="card">
+        <p style="margin:0 0 10px;font-size:13px;color:var(--ink-2)">民航招飞统一在教育部阳光高考平台报名，招飞系统用于注册、填报与确认申请。</p>
+        <a class="btn btn-gold btn-block" target="_blank" rel="noopener" href="https://gaokao.chsi.com.cn/gkzt/mhzf">前往阳光高考报名入口</a>
+        <a class="btn btn-outline btn-block" style="margin-top:9px" target="_blank" rel="noopener" href="https://mhzf.caac.gov.cn/">打开民航招飞信息系统</a>
+      </div>
+      <div class="sec-title"><span class="bar"></span>报考八步流程</div>
+      <div class="card">
+        <div class="flow">
+          <div class="flow-step"><b>注册报名</b><p>在阳光高考 / 招飞系统注册，填写信息并选择意向初检场次。</p></div>
+          <div class="flow-step"><b>预选初检</b><p>按通知到现场参加资格审查、体格初筛、英语与能力测试、面试。</p></div>
+          <div class="flow-step"><b>体检鉴定</b><p>含飞行职业心理学检测，按 I 级体检合格证标准鉴定。</p></div>
+          <div class="flow-step"><b>确认有效申请</b><p>2027-02-15 起确认，最多 2 个，确认后不可更改。</p></div>
+          <div class="flow-step"><b>背景调查</b><p>对体检合格考生进行背景调查。</p></div>
+          <div class="flow-step"><b>参加高考</b><p>选考一般须含物理、化学，外语为英语。</p></div>
+          <div class="flow-step"><b>提前批志愿</b><p>在本科提前批填报飞行技术专业志愿。</p></div>
+          <div class="flow-step"><b>择优录取</b><p>高考成绩与各项结论达标后，按规则投档录取。</p></div>
+        </div>
+      </div>
+      <div class="sec-title"><span class="bar"></span>重要规则提醒</div>
+      <div class="card">
+        <div class="kv" style="margin-bottom:0">
+          <dt>申请数量</dt><dd>有效招飞申请最多 2 个，确认后不可更改</dd>
+          <dt>结论共享</dt><dd>体检合格结论、心理测试结论跨申请共享</dd>
+          <dt>不共享</dt><dd>初检、背景调查结论仅对本申请有效</dd>
+          <dt>性别</dt><dd>本年度已公布简章均只招收男生</dd>
+          <dt>年龄</dt><dd>16–20 周岁（2007-09-01 至 2011-08-31 出生）</dd>
+        </div>
+      </div>
+      <div class="sec-title"><span class="bar"></span>22 所招飞院校</div>
+      <div class="school-list" id="schoolList"></div>
+      <div class="sec-title"><span class="bar"></span>常见问题</div>
+      <div id="faqList"></div>
+      <div class="sec-title"><span class="bar"></span>数据来源</div>
+      <div class="src-list">
+        <a class="src-row" target="_blank" rel="noopener" href="https://mhzf.caac.gov.cn/"><span class="src-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><span class="src-txt"><b>中国民用航空招飞信息系统</b><span>mhzf.caac.gov.cn（民航局主办）</span></span></a>
+        <a class="src-row" target="_blank" rel="noopener" href="https://gaokao.chsi.com.cn/gkzt/mhzf"><span class="src-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></span><span class="src-txt"><b>教育部阳光高考平台</b><span>gaokao.chsi.com.cn（唯一报名入口）</span></span></a>
+      </div>
+      <p class="muted-note">本页为信息汇总，不替代官方简章；招生计划、日程与费用如有调整，以各院校及航司官方最新通知为准。</p>
+    </section>
+  </main>
+  <nav class="tabbar">
+    <button class="tab on" data-go="home"><svg class="t-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>首页</button>
+    <button class="tab" data-go="brochure"><svg class="t-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>简章</button>
+    <button class="tab" data-go="schedule"><svg class="t-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>初检</button>
+    <button class="tab" data-go="guide"><svg class="t-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>指南</button>
+  </nav>
+  <div class="modal-mask" id="modalMask">
+    <div class="modal" id="modalBox">
+      <div class="modal-handle"></div>
+      <div class="modal-head">
+        <span class="m-ico" id="mIco"></span>
+        <h3 id="mTitle"></h3>
+        <span class="m-close" id="mClose"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+      </div>
+      <div class="modal-body" id="mBody"></div>
+    </div>
+  </div>
+</div>
+<script>
+var ICO_PLANE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>';
+var BROCHURES = [
+ {id:172,name:'中国东方航空',type:'air',funded:'pub',partners:'北航 / 南航大 / 中飞院 / 民航大',provinces:['上海','江苏','安徽','山东','江西','浙江','北京','天津','山西','陕西','甘肃','云南','湖北'],plan:'面向 13 省市，男 16–20 岁，选考物理化学、外语英语',height:'168–190 cm',bmi:'18.5–24',english:'英语',score:'按简章及当地控制线',fee:'公司承担培训费约 80 万元',tuition:'按合作院校标准',phone:'以官方公布为准',account:'东航招聘',link:'https://job.ceair.com/',note:'公费委托培养，初检不收费'},
+ {id:170,name:'中航集团（国航系）',type:'air',funded:'pub',partners:'北航 / 南航大 / 中飞院 / 民航大',provinces:['北京','天津','河北','浙江','重庆','内蒙古','新疆'],plan:'含国航、深航、山航，男生、物化、英语',height:'自荐 168–188 cm',bmi:'按医学标准',english:'英语',score:'按简章及当地控制线',fee:'公费培养',tuition:'按合作院校标准',phone:'以官方公布为准',account:'中航集团招聘',link:'https://zhaopin.airchina.com.cn/',note:'集团统一组织，多送培单位'},
+ {id:166,name:'中国南方航空',type:'air',funded:'pub',partners:'北航 / 南航大 / 中飞院 / 民航大',provinces:['新疆','上海','海南','河南','吉林','湖北','重庆','辽宁','黑龙江','贵州','广西','广东','北京','河北','山东','湖南','陕西'],plan:'覆盖 17 省市，4 所合作院校',height:'≥168 cm',bmi:'18.5–26',english:'英语',score:'高考成绩达控制线 60%',fee:'培训费 70–150 万元由公司承担',tuition:'按合作院校标准',phone:'以官方公布为准',account:'南方航空招聘',link:'https://job.csair.cn/',note:'明确“不应有屈光手术病史”，要求更严'},
+ {id:155,name:'中国民用航空飞行学院',type:'school',funded:'mixed',partners:'18 家航司',provinces:['江苏','黑龙江','湖南','重庆','河南','吉林','河北','山西','内蒙古','辽宁','浙江','福建','江西','山东','广东','四川','陕西','云南','贵州','广西','海南','新疆','湖北'],plan:'23 省、18 航司；公费覆盖 22 省，另含 8 类自费',height:'168–190 cm',bmi:'按医学标准',english:'英语单科 100+',score:'达控制线 60%',fee:'公费公司承担；自费按协议',tuition:'学费 6500 元/年，住宿 1200',phone:'0838-5182078 / 5183361',account:'中国民用航空飞行学院招生处',link:'https://www.cafuc.edu.cn/',note:'本校自招，日程持续更新'},
+ {id:145,name:'南京航空航天大学',type:'school',funded:'mixed',partners:'8 家委培航司',provinces:['北京','河北','上海','江苏','浙江','安徽','山东','河南','湖南','广西','海南','重庆','贵州','新疆'],plan:'14 省约 310 人，8 家送培单位',height:'168–190 cm',bmi:'18.5–24',english:'英语单科 100+',score:'特殊类型控制线且 ≥60%',fee:'按送培单位，含公费与自费',tuition:'按学校标准',phone:'400-1815200',account:'南京航空航天大学招飞',link:'https://zf.nuaa.edu.cn/',note:'分省初检面试，须现场参加'},
+ {id:159,name:'北京航空航天大学',type:'school',funded:'mixed',partners:'南航 / 东航 / 国航 / 京东 / 顺丰',provinces:['北京','河北','辽宁','吉林','黑龙江','上海','浙江','安徽','山东','湖北','广东','重庆','陕西','新疆'],plan:'14 省 221 人；顺丰为垫资偿还，其余公费',height:'按简章',bmi:'按医学标准',english:'英语 100+，顺丰 110+',score:'特殊类型控制线且 ≥60%',fee:'公费为主，顺丰垫资偿还',tuition:'学费 5500 元/年',phone:'010-61716505',account:'北航招生',link:'https://flyingstu.buaa.edu.cn/zfbm',note:'重点高校，文化课要求较高'},
+ {id:152,name:'中国民航大学',type:'school',funded:'mixed',partners:'12 家航司',provinces:['天津','江苏','山东','河南','辽宁','安徽','陕西','山西','河北','新疆','浙江','江西','湖北'],plan:'13 省约 160 人，12 家航司',height:'168–185 cm',bmi:'按医学标准',english:'英语单科 100+',score:'达控制线 60%',fee:'多省含自费安排，余公费',tuition:'学费 5800 元/年',phone:'022-24092508 / 24092126',account:'中国民航大学招生',link:'https://www.cauc.edu.cn/',note:'自费含贷款、自筹、垫资等方式'},
+ {id:158,name:'山东航空学院',type:'school',funded:'mixed',partners:'海航 / 京东',provinces:['山东','云南','福建'],plan:'山东 10（自费·海航）、云南 4（公费·京东）、福建 4（公费·京东）',height:'京东 170–188；海航 168–187',bmi:'按医学标准',english:'英语达控制线 60%',score:'总分达 60%、英语 60%',fee:'海航预估约 78 万自费；京东公费',tuition:'按学校标准',phone:'0543-3194990 / 3190201',account:'山东航空学院招生',link:'https://zs.sdua.edu.cn/',note:'海航要求单眼裸眼 C 表 ≥0.3'},
+ {id:154,name:'上海工程技术大学',type:'school',funded:'self',partners:'春秋航空',provinces:['上海'],plan:'上海春秋自费 20 名',height:'168–185 cm',bmi:'按医学标准',english:'英语单科 100+',score:'按当地控制线',fee:'春秋自费培养',tuition:'学费 7000 元/年，住宿 1200',phone:'021-67791440',account:'上海工程技术大学招生',link:'https://zsb.sues.edu.cn/',note:'2.5+1.5 培养模式'},
+ {id:157,name:'常州工学院',type:'school',funded:'self',partners:'福航（苏皖）/ 弘翔（豫）',provinces:['江苏','河南','安徽'],plan:'苏 / 豫 / 皖共 20 人，全自费约 65 万',height:'170–185 cm',bmi:'按医学标准',english:'英语达控制线 60%',score:'达控制线 60%',fee:'全自费约 65 万元',tuition:'学费 5800 元/年',phone:'0519-88510088',account:'常州工学院招生',link:'https://mhzf.czu.cn/',note:'委托航校培养'},
+ {id:156,name:'山东交通学院',type:'school',funded:'self',partners:'青岛九天',provinces:['山东','江苏'],plan:'山东 / 江苏 20 人，自费 65 万、可担保贷款',height:'170–187 cm',bmi:'按医学标准',english:'英语单科 90+',score:'达控制线 60%',fee:'自费 65 万，可担保贷款',tuition:'按学校标准',phone:'0531-80683996 / 80688480',account:'山东交通学院招生在线',link:'https://zsw.sdjtu.edu.cn/',note:'委托青岛九天飞行学院'},
+ {id:150,name:'昆明理工大学',type:'school',funded:'self',partners:'青岛九天',provinces:['湖南'],plan:'湖南 10 人；先缴 25 万、余 40 万担保贷款',height:'168–185 cm',bmi:'按医学标准',english:'英语单科 90+',score:'达控制线 60%',fee:'自费 65 万（25 万 + 40 万贷款）',tuition:'学费 5000 元/年',phone:'0871-65953560 / 65950024',account:'昆明理工大学招生',link:'https://www.kust.edu.cn/',note:'仅面向湖南'},
+ {id:148,name:'安阳工学院',type:'school',funded:'self',partners:'湖北弘翔 / 蔚蓝',provinces:['河南'],plan:'河南 15 名自费',height:'170–187 cm',bmi:'按医学标准',english:'英语达控制线 60%',score:'达控制线 60%、英语 60%',fee:'弘翔约 65 万（先担 35 万、余担保贷款）；蔚蓝约 75 万不担保',tuition:'学费 5000 元/年',phone:'0372-2909130',account:'安阳工学院招生',link:'https://zs.ayit.edu.cn/',note:'委托两家航校，费用口径不同'},
+ {id:146,name:'南昌理工学院',type:'school',funded:'self',partners:'北京翔宇',provinces:['江西'],plan:'江西 2 名自费，培养航校飞行教员',height:'按简章',bmi:'按医学标准',english:'按简章',score:'按当地控制线',fee:'翔宇培训费 80 万，另卧具住宿服装保险 14200',tuition:'学费 23900 元/年',phone:'0791-83891958',account:'南昌理工学院招生',link:'https://www.nut.edu.cn/',note:'2+2 模式；角膜屈光手术须满 6 个月且手术时年满 18'}
+];
+var WX='https://mp.weixin.qq.com';
+var SCHEDULES={
+'上海':[
+ {org:'上海工程技术大学（春秋·自费20）',kind:'self',items:[
+  {date:'11月14日',time:'8:30-10:00',place:'长宁校区（仙霞路350号）'},
+  {date:'11月21日',time:'9:00-10:30',place:'闵行教育考试中心（山花路128号）'},
+  {date:'11月29日',time:'12:00-13:30',place:'虹口校区（逸仙路58号）'},
+  {date:'12月6日',time:'8:30-10:00',place:'松江校区（龙腾路333号）'}]},
+ {org:'中国南方航空',wechat:true,link:WX+'/s/MF1WYszc7TVD8aEs_-sAvw',note:'上海场次具体安排见官方微信原文'}
+],
+'浙江':[
+ {org:'北航 / 南航大 / 民航大（五站点，均8:30）',kind:'pub',note:'北航(顺丰10/京东6)、南航大(春秋20/京东4/国航)、民航大(厦航)',items:[
+  {date:'11月21日',place:'杭州萧山万怡酒店（萧山区永晖路548号）',cover:'杭州、湖州'},
+  {date:'11月22日',place:'同上酒店',cover:'嘉兴、绍兴'},
+  {date:'11月24日',place:'宁波开元名庭（鄞州区百丈东路812号）',cover:'宁波、舟山'},
+  {date:'11月26日',place:'温州金银岛（鹿城区洛河路3号）',cover:'温州、台州'},
+  {date:'11月28日',place:'金华金城国际（婺城区环城南路西段1219号）',cover:'金华、衢州、丽水'}]}
+],
+'江苏':[
+ {org:'南京航空航天大学（13城，均8:30）',kind:'mixed',items:[
+  {date:'11月14-15日',place:'徐州希尔顿欢朋（云龙区解放路246号文峰大厦北塔楼）'},
+  {date:'11月16日',place:'连云港教育考试院（海州区烟草路5号）'},
+  {date:'11月18日',place:'宿迁江山大酒店（宿豫区江山大道88号）'},
+  {date:'11月19日',place:'淮安铂尔曼（淮阴区长江西路208号）'},
+  {date:'12月3日',place:'苏州南航大附中（工业园区运澄路65号）'},
+  {date:'12月4日',place:'无锡先锋高级中学（新吴区锡兴北路117号）'},
+  {date:'12月5-6日',place:'南京将军路校区6号楼（将军大道29号）'},
+  {date:'12月7日',place:'镇江崇实女中（润州区风车山路26号）'},
+  {date:'12月23日',place:'盐城瀛洲开元名庭（亭湖区开放大道北路28号）'},
+  {date:'12月24日',place:'扬州会议中心（邗江区七里甸路1号）'},
+  {date:'12月25日',place:'泰州世茂茂御（泰州大道329号）'},
+  {date:'12月26日',place:'南通教育考试院（崇川区青年西路22号）'},
+  {date:'2027年1月1日',place:'常州天目湖校区巡天楼（溧阳市滨河东路29号）'}]},
+ {org:'中国民航大学（深航·公费约10名，均9:00）',kind:'pub',link:'https://ghzf.airchina.com.cn/student',linkText:'报名系统',items:[
+  {date:'11月15日',place:'南京南航大附中蓝旗街（御道街35号）'},
+  {date:'11月17日',place:'无锡豪致酒店（梁溪区学前东路797号）'},
+  {date:'11月19日',place:'苏州吴中希尔顿欢朋（迎春路38号）'},
+  {date:'12月21日',place:'南通教育考试院（青年西路22号）'}]},
+ {org:'常州工学院（福航·自费，9:00-11:30）',kind:'self',items:[
+  {date:'11月14日',place:'徐州希尔顿欢朋'},
+  {date:'11月21日',place:'南通教育考试院'}]},
+ {org:'中国民航飞行学院',wechat:true,link:WX+'/s/cpXsb2GPdgSt-DNOSl4bFg',note:'江苏日程见官方微信原文'}
+],
+'河南':[
+ {org:'安阳工学院 / 常州工学院（六站点，8:30-11:30、14:30-17:30）',kind:'self',note:'常工河南（弘翔）与下列站点相同',items:[
+  {date:'11月17-18日',place:'洛阳牡丹城宾馆（涧西区南昌路2号）',cover:'洛阳、焦作、三门峡、济源'},
+  {date:'11月19日',place:'周口锦江天明国际（川汇区平安路16号）',cover:'周口、商丘、驻马店'},
+  {date:'11月22日',place:'锦江之星安阳工学院店（黄河大道与彰德路交叉口东200米）',cover:'安阳、濮阳、鹤壁'},
+  {date:'11月24-25日',place:'南阳第二完全学校高中部（宛城区）',cover:'南阳、平顶山'},
+  {date:'11月28-29日',place:'郑州郑东新区希尔顿花园（管城区七里河南路）',cover:'郑州、开封、新乡、许昌、漯河'},
+  {date:'12月7-8日',place:'信阳大别山高级中学（羊山区高铁站西侧）',cover:'信阳'}]},
+ {org:'中国民航飞行学院',wechat:true,link:WX+'/s/Yhlxj96wOwMDsoWT_NYDPA',note:'河南日程见官方微信原文'},
+ {org:'中国南方航空',wechat:true,link:WX+'/s/4-sYP8u3WoNuDsOk-XpSrg',note:'河南场次见官方微信原文'}
+],
+'北京':[
+ {org:'中国东方航空（北航—东航，9-12、13:30-16，不限区县）',kind:'pub',items:[
+  {date:'11月22日',place:'大兴机场东航基地A3培训楼309多功能厅'},
+  {date:'11月29日',place:'北航学院路校区新主楼F座201'},
+  {date:'12月6日',place:'北邮科技大厦二层多功能厅（海淀区西土城路10号）'},
+  {date:'12月13日',place:'民航国际会议中心三层报告二厅（朝阳区花家地东路3号）'},
+  {date:'12月20日',place:'人卫酒店会展区八层801（朝阳区潘家园南里19号）'},
+  {date:'12月27日',place:'大兴机场东航基地A3培训楼'}]},
+ {org:'中航集团（国航65名，身高168-188）',kind:'pub',note:'北航10/南航大20/中飞院30/民航大5',items:[
+  {date:'11月14、15日',place:'中航泊悦（朝阳区霄云路36号）'},
+  {date:'11月21、22日',place:'首都国际会展中心大酒店（顺义区裕东路55号院1号）'},
+  {date:'11月28、29日、12月5、6日',place:'中航泊悦（朝阳区霄云路36号）'}]}
+],
+'天津':[
+ {org:'中国东方航空（民航大—东航，8:30-12、13:30-16）',kind:'pub',items:[
+  {date:'2027年1月10日',place:'梅江中心皇冠假日酒店四层皇冠宴会厅A（河西区友谊南路11号）'},
+  {date:'2027年1月16日',place:'空港国际总部基地F区一层（东丽区广轩道民航大科技园）'},
+  {date:'2027年1月17日',place:'同上F区'}]},
+ {org:'中航集团（国航5名，9:00-11:30、13:30-17:00）',kind:'pub',items:[
+  {date:'12月2-3日',place:'东凯悦酒店一层（河东区卫国道126号）'}]}
+],
+'重庆':[
+ {org:'中航集团（国航15名：北航5/中飞院10）',kind:'pub',note:'线上初检 + 12月5-6日面试',items:[
+  {date:'12月5-6日',place:'国航重庆飞行员公寓（两江新区渝都大道368号）'}]},
+ {org:'中国民航飞行学院',wechat:true,link:WX+'/s/PnrMPjIB-VSUh-tFKpXOcg',note:'重庆日程见官方微信原文'},
+ {org:'中国南方航空',wechat:true,link:WX+'/s/g0mKljRLG8HGBskPvKHNrA',note:'重庆场次见官方微信原文'}
+],
+'湖北':[
+ {org:'中国东方航空（均9:00，除武汉外9:30后不受理）',kind:'pub',items:[
+  {date:'11月18-20日',place:'武汉解放军空降兵部队医院体检中心'},
+  {date:'11月23日',place:'黄冈麻城一中'},
+  {date:'11月24日',place:'黄冈英山一中'},
+  {date:'11月25日',place:'黄冈黄州中学高中部'},
+  {date:'11月26日',place:'黄冈蕲春一中'},
+  {date:'12月1日',place:'黄石二中'},
+  {date:'12月2日',place:'潜江中学'},
+  {date:'12月3日',place:'荆门市招生考试局'}]},
+ {org:'中国南方航空',wechat:true,link:WX+'/s/1yh_vUOgliSMIIbtaqFOkg',note:'湖北场次见官方微信原文'}
+],
+'山东':[
+ {org:'南京航空航天大学（均8:30，吉祥5/成都10）',kind:'mixed',note:'错过本市可赴烟台补检',items:[
+  {date:'12月1日',place:'青岛山东千人考试中心崂山校区（崂山区银川东路3号）',cover:'青岛、烟台、威海'},
+  {date:'12月2日',place:'同上',cover:'潍坊、日照'},
+  {date:'12月4日',place:'济南历城二中彩石校区教学楼B座（历城区彩石街道虎山路1678号）',cover:'淄博、东营、聊城、德州'},
+  {date:'12月5日上午',place:'同上',cover:'济南、滨州'},
+  {date:'12月6日',place:'济宁学院附属高级中学新校区（任城区枫杨路1号）',cover:'济宁、枣庄、泰安、临沂、菏泽'},
+  {date:'待定',place:'烟台站（全省补检）',tbd:true}]},
+ {org:'山东航空学院',kind:'tbd',note:'山东日程官方待更新，请关注院校招飞网'}
+],
+'安徽':[
+ {org:'南京航空航天大学（均8:30，京东8/春秋20）',kind:'mixed',items:[
+  {date:'12月15日',place:'芜湖华栖大酒店（镜湖区中山路1号）',cover:'芜湖及周边'},
+  {date:'12月16日',place:'安庆开元名庭（大观区十里铺乡皇冠路1号）',cover:'安庆及周边'},
+  {date:'12月18日',place:'阜阳富力万达嘉华（颍州区颍州南路299号）',cover:'阜阳及周边'},
+  {date:'12月19日',place:'合肥两淮天鹅湖大酒店（高新区科学大道6号）',cover:'合肥及周边'},
+  {date:'12月20日',place:'同上',cover:'合肥及周边'}]}
+],
+'吉林':[
+ {org:'中国民航飞行学院（初选12月6-16日）',kind:'pub',link:'http://m.toutiao.com/group/7708723435500896777/',linkText:'转载详情',note:'流程：资质审查—英语—职业能力—外科—综合面试'},
+ {org:'中国民航飞行学院',wechat:true,link:WX+'/s/0zpM2aMFEW9HfnTa_iDoUw',note:'吉林日程见官方微信原文'},
+ {org:'中国南方航空',wechat:true,link:WX+'/s/pWNaHizmyyXWCCIG3nWSHQ',note:'吉林场次见官方微信原文'}
+],
+'黑龙江':[
+ {org:'中国民航飞行学院',wechat:true,link:WX+'/s/exXyJQTqbEy4LMLEkGTdoQ',note:'黑龙江日程见官方微信原文'},
+ {org:'中国南方航空',wechat:true,link:WX+'/s/R_z6Ykgum4LTWr8ljYNhzg',note:'黑龙江场次见官方微信原文'}
+],
+'湖南':[
+ {org:'中国民航飞行学院',wechat:true,link:WX+'/s/po9L0I4jNR30wkmYFj5Dtw',note:'湖南日程见官方微信原文'}
+],
+'新疆':[
+ {org:'中国南方航空',wechat:true,link:WX+'/s/rp4bU1HhRJtTiGG1BMfUpg',note:'新疆场次见官方微信原文'}
+],
+'海南':[
+ {org:'中国南方航空',wechat:true,link:WX+'/s/1KjhvMm79OFyh0b-t-wsSg',note:'海南场次见官方微信原文'}
+],
+'辽宁':[
+ {org:'中国南方航空',wechat:true,link:WX+'/s/W9aAlsV-MPGz1dA6CN47rw',note:'辽宁场次见官方微信原文'}
+],
+'贵州':[
+ {org:'中国南方航空',wechat:true,link:WX+'/s/PbxF92dDYQCC7yAGGtuM5Q',note:'贵州场次见官方微信原文'}
+],
+'广西':[
+ {org:'中国南方航空',wechat:true,link:WX+'/s/CzH8iUb4aq7C_KCsiYhr9A',note:'广西场次见官方微信原文'}
+],
+'四川':[
+ {org:'中国民航飞行学院',kind:'tbd',note:'在川含顺丰、春秋等自费计划，具体初检日程官方待更新，可就近关注重庆安排'}
+]
+};
+var SCHOOLS=['中国民用航空飞行学院','北京航空航天大学','南京航空航天大学','中国民航大学','山东航空学院','沈阳航空航天大学','上海工程技术大学','南昌航空大学','黑龙江八一农垦大学','安阳工学院','烟台南山学院','常州工学院','南昌理工学院','山东交通学院','郑州航空工业管理学院','北京理工大学珠海学院','南京航空航天大学金城学院','昆明理工大学','西安航空学院','太原理工大学','内蒙古工业大学','江西飞行学院'];
+var FAQ=[
+ {q:'公费和自费有什么区别？',a:'公费由合作航司承担飞行培训费（约 70–150 万元），毕业达到入职条件后进入签约航司，在校只需缴纳普通高校学费；自费由学生承担培训费（约 65–80 万元），常见担保贷款、分期偿还、公司垫资等方式，报名前务必看清自费培养协议。'},
+ {q:'近视或做过激光手术能报吗？',a:'屈光度（等效球镜）一般要求在 -4.50D 至 +3.00D 之间，无色盲、色弱、夜盲、斜视。角膜屈光手术各单位口径不同：南航明确“不应有屈光手术病史”；部分院校接受但有条件，如南昌理工要求术后满 6 个月且手术时年满 18 周岁。具体以目标单位简章为准。'},
+ {q:'选科和外语有什么要求？',a:'多数院校要求选考物理和化学、外语语种为英语。多所院校对英语单科成绩有要求，一般在 90 分以上，北航、南航大、中飞院等要求 100 分以上，顺丰方向要求 110 分以上。'},
+ {q:'年龄和性别有什么要求？',a:'本年度已公布简章均只招收男生，年龄 16–20 周岁，即 2007 年 9 月 1 日至 2011 年 8 月 31 日之间出生（以身份证为准）。'},
+ {q:'参加初检要带什么？',a:'通常需携带加盖学校公章的报名表、本人身份证原件、可联网且电量充足的智能手机、一个月以内的机打验光单，以及笔和草稿纸。初检含体能测试，建议自备运动鞋和运动服，并自备食物和水。'},
+ {q:'可以同时报几个单位？',a:'确认有效招飞申请最多 2 个，确认后不可更改。体检合格结论与飞行职业心理学检测结论可在多个申请间共享；初检结论和背景调查结论不共享，仅对本申请有效。'}
+];
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function fundedTag(f){return f==='pub'?'<span class="tag pub">公费</span>':f==='self'?'<span class="tag self">自费</span>':'<span class="tag pub">公费</span><span class="tag self">自费</span>';}
+var PROVINCES=Object.keys(SCHEDULES);
+var currentProv=PROVINCES[0];
+var bFilter='all';
+function go(name){
+  var v=document.getElementById('view-'+name);
+  if(!v)return;
+  document.querySelectorAll('.view').forEach(function(x){x.classList.remove('active');});
+  v.classList.add('active');
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-go')===name);});
+  window.scrollTo(0,0);
+  if(location.hash!=='#'+name)location.hash=name;
+}
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-go]');
+  if(t){e.preventDefault();go(t.getAttribute('data-go'));}
+});
+function renderBrochures(){
+  var kw=document.getElementById('bSearch').value.trim().toLowerCase();
+  var box=document.getElementById('bList');
+  var list=BROCHURES.filter(function(b){
+    if(bFilter!=='all'&&b.type!==bFilter)return false;
+    if(!kw)return true;
+    var hay=(b.name+b.partners+b.plan+b.provinces.join(' ')+(b.account||'')).toLowerCase();
+    return hay.indexOf(kw)>-1;
+  });
+  if(!list.length){box.innerHTML='<p class="muted-note" style="text-align:center;padding:24px 0">没有找到匹配的简章</p>';return;}
+  box.innerHTML=list.map(function(b){
+    return '<div class="card" data-id="'+b.id+'">'+
+      '<div class="card-head"><span class="ico">'+ICO_PLANE+'</span>'+
+      '<div class="tt"><h3>'+esc(b.name)+'</h3>'+
+      '<div class="meta"><span class="tag '+(b.type==='air'?'air':'sch')+'">'+(b.type==='air'?'航空公司':'院校自主')+'</span>'+fundedTag(b.funded)+
+      '<span class="chip">'+b.provinces.length+' 省市</span></div></div>'+
+      '<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></div></div>';
+  }).join('');
+  box.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('click',function(){openBrochure(Number(c.getAttribute('data-id')));});
+  });
+}
+document.getElementById('bFilter').addEventListener('click',function(e){
+  var p=e.target.closest('.pill');if(!p)return;
+  bFilter=p.getAttribute('data-bf');
+  document.querySelectorAll('#bFilter .pill').forEach(function(x){x.classList.toggle('on',x===p);});
+  renderBrochures();
+});
+document.getElementById('bSearch').addEventListener('input',renderBrochures);
+function openBrochure(id){
+  var b=BROCHURES.find(function(x){return x.id===id;});if(!b)return;
+  document.getElementById('mIco').innerHTML=ICO_PLANE;
+  document.getElementById('mTitle').textContent=b.name;
+  var rows=[
+    ['单位类型',b.type==='air'?'航空公司':'院校自主'],['培养费用',b.funded==='pub'?'公费':b.funded==='self'?'自费':'公费 / 自费兼有'],
+    ['合作单位',b.partners],['招生计划',b.plan],['覆盖省份',b.provinces.join('、')],
+    ['身高要求',b.height],['BMI',b.bmi],['英语要求',b.english],['成绩要求',b.score],
+    ['培训费',b.fee],['学费住宿',b.tuition],['咨询电话',b.phone],['公众号',b.account]
+  ];
+  var html='<dl class="kv">'+rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>';}).join('')+'</dl>';
+  if(b.note)html+='<p class="muted-note" style="margin:4px 2px 8px">'+esc(b.note)+'</p>';
+  html+='<div class="links"><a class="mini-link" target="_blank" rel="noopener" href="'+b.link+'">查看官方网站</a></div>';
+  document.getElementById('mBody').innerHTML=html;
+  document.getElementById('modalMask').classList.add('show');
+}
+function closeModal(){document.getElementById('modalMask').classList.remove('show');}
+document.getElementById('mClose').addEventListener('click',closeModal);
+document.getElementById('modalMask').addEventListener('click',function(e){if(e.target===this)closeModal();});
+function renderProvGrid(filter){
+  var grid=document.getElementById('provGrid');
+  grid.innerHTML=PROVINCES.filter(function(p){return !filter||p.indexOf(filter)>-1;}).map(function(p){
+    return '<button data-p="'+esc(p)+'" class="'+(p===currentProv?'on':'')+'">'+esc(p)+'</button>';
+  }).join('');
+  grid.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click',function(){currentProv=btn.getAttribute('data-p');renderProvGrid(document.getElementById('pSearch').value.trim());renderSchedule();});
+  });
+}
+function renderSchedule(){
+  var groups=SCHEDULES[currentProv]||[];
+  var box=document.getElementById('schedBox');
+  if(!groups.length){box.innerHTML='<p class="muted-note" style="text-align:center;padding:20px 0">该省份暂无已公布安排</p>';return;}
+  box.innerHTML=groups.map(function(g){
+    if(g.wechat){
+      return '<div class="org-label">'+esc(g.org)+'</div><div class="sched-item wechat-only">'+
+        '<div class="date"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg>官方微信已发布</div>'+
+        '<p style="margin:7px 0 0;font-size:13px">'+esc(g.note)+'</p>'+
+        '<div class="links"><a class="mini-link wechat" target="_blank" rel="noopener" href="'+g.link+'">查看原文</a></div></div>';
+    }
+    if(g.kind==='tbd'){
+      return '<div class="org-label">'+esc(g.org)+'</div><div class="sched-item tbd"><div class="date"><span class="tag tbd">待定</span> 行程暂未确定</div><p style="margin:7px 0 0;font-size:13px">'+esc(g.note)+'</p></div>';
+    }
+    var head='<div class="org-label">'+esc(g.org)+'</div>';
+    if(g.note)head+='<p class="muted-note" style="margin:0 2px 8px">'+esc(g.note)+'</p>';
+    var items=g.items.map(function(it){
+      return '<div class="sched-item'+(it.tbd?' tbd':'')+'"><div class="date">'+esc(it.date)+
+        (it.time?'<span class="clock">'+esc(it.time)+'</span>':(it.tbd?'<span class="tag tbd">待定</span>':''))+'</div>'+
+        '<div class="place">'+esc(it.place)+'</div>'+(it.cover?'<div class="cover">涵盖：'+esc(it.cover)+'</div>':'')+'</div>';
+    }).join('');
+    var link=g.link?'<div class="links"><a class="mini-link" target="_blank" rel="noopener" href="'+g.link+'">'+esc(g.linkText||'相关链接')+'</a></div>':'';
+    return head+items+link;
+  }).join('');
+}
+document.getElementById('pSearch').addEventListener('input',function(){
+  var v=this.value.trim();renderProvGrid(v);
+  if(v&&SCHEDULES[v]){currentProv=v;renderProvGrid(v);renderSchedule();}
+});
+document.getElementById('schoolList').innerHTML=SCHOOLS.map(function(s){return '<div class="s">'+esc(s)+'</div>';}).join('');
+document.getElementById('faqList').innerHTML=FAQ.map(function(f,i){
+  return '<div class="faq-item" data-i="'+i+'"><div class="faq-q"><span class="q-ico">问</span>'+esc(f.q)+
+    '<span class="q-plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></div>'+
+    '<div class="faq-a">'+esc(f.a)+'</div></div>';
+}).join('');
+document.querySelectorAll('.faq-item').forEach(function(it){
+  it.addEventListener('click',function(){it.classList.toggle('open');});
+});
+renderBrochures();
+renderProvGrid('');
+renderSchedule();
+var h=(location.hash||'').replace('#','');
+if(h&&document.getElementById('view-'+h))go(h);
+</script>
